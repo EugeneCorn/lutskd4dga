@@ -1,5 +1,7 @@
 name: Drupal custom modules checker
-on: [push,pull_request]
+on: 
+  push
+  pull_request
 jobs:
   drupal-checker:
     runs-on: ubuntu-latest
@@ -17,6 +19,7 @@ jobs:
         run: |
           cd html/ci
           vendor/bin/phpcs
+          ls -la
 
       - name: Fix the marked errors
         run: 
