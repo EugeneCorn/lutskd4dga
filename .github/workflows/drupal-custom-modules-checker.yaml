@@ -17,4 +17,8 @@ jobs:
         run: |
           cd html/ci
           vendor/bin/phpcs
+
+      - name: Fix the marked errors
+        run: |
+          cd html/ci
           vendor/bin/phpcbf
