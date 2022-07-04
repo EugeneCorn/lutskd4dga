@@ -19,6 +19,5 @@ jobs:
           vendor/bin/phpcs
 
       - name: Fix the marked errors
-        run: |
-          cd html/ci
-          vendor/bin/phpcbf
+        run: 
+          vendor/bin/phpcbf html/web/modules/custom
