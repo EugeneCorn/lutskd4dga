@@ -13,12 +13,8 @@ jobs:
           composer require --dev dealerdirect/phpcodesniffer-composer-installer
           composer require --dev drupal/coder:8.3.13
 
-      - name: Check coding standards
+      - name: Fixing and Check coding standards
         run: |
           cd html/ci
+          vendor/bin/phpcbf
           vendor/bin/phpcs
-          ls -la
-
-      - name: Fix the marked errors
-        run: 
-          vendor/bin/phpcbf html/web/modules/custom
