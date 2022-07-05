@@ -17,5 +17,5 @@ jobs:
         run: |
           cd html/ci
           vendor/bin/phpcs --runtime-set ignore_errors_on_exit true
-          vendor/bin/phpcbf --runtime-set ignore_errors_on_exit true
+          vendor/bin/phpcbf --runtime-set
           
