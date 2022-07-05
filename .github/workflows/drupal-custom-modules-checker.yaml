@@ -1,5 +1,5 @@
 name: Drupal custom modules checker
-  #on: [push,pull_request]
+on: [push,pull_request]
 jobs:
   drupal-checker:
     runs-on: ubuntu-latest
@@ -16,5 +16,6 @@ jobs:
       - name: Fixing and Check coding standards
         run: |
           cd html/ci
-          vendor/bin/phpcbf
-          vendor/bin/phpcs
+          vendor/bin/phpcs --runtime-set ignore_warnings_on_exit true
+          vendor/bin/phpcbf --runtime-set ignore_warnings_on_exit true
+          
