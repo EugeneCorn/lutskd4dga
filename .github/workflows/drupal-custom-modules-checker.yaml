@@ -16,12 +16,10 @@ jobs:
 
       - name: Install PHP CodeSniffer
         run: |
-          cd html/ci
           composer require --dev dealerdirect/phpcodesniffer-composer-installer
           composer require --dev drupal/coder:8.3.13
 
       - name: Fixing and Check coding standards
         run: |
-          cd html/ci
           vendor/bin/phpcs -q --report=checkstyle | cs2pr --graceful-warnings
           vendor/bin/phpcbf -q --report=checkstyle | cs2pr --graceful-warnings
