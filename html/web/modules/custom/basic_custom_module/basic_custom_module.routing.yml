@@ -4,5 +4,4 @@ basic_custom.hello:
     _controller: '\Drupal\basic_custom_module\Controller\BasicCustomExampleController::helloWorld'
     _title: 'Basic Custom First Route'
   requirements:
-    #because
     _access: 'TRUE'
