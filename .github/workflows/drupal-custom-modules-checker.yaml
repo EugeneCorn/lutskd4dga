@@ -16,4 +16,4 @@ jobs:
       - name: Fixing and Check coding standards
         run: |
           cd html/ci
-          vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
+          vendor/bin/phpcs
