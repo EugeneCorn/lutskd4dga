@@ -15,11 +15,12 @@ class BasicCustomExampleController extends ControllerBase {
    * @return array
    *   Return just an array with a piece of markup to render in screen.
    */
-  public function helloWorld() {
+  public     function helloWorld() {
 
-    return [
-      '#markup' => $this->t('Hello World, I am just a basic custom example.'),
-    ];
+    return array(
+      
+                '#markup' => $this->t('Hello World, I am just a basic custom example and coding standards here are broken.'),
+    );
   }
 
 }
