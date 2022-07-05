@@ -1,11 +1,18 @@
 name: Drupal custom modules checker
-  #on: [push,pull_request]
+on: [push,pull_request]
 jobs:
   drupal-checker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Setup PHP tool
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer, cs2pr
 
       - name: Install PHP CodeSniffer
         run: |
@@ -16,5 +23,5 @@ jobs:
       - name: Fixing and Check coding standards
         run: |
           cd html/ci
-          vendor/bin/phpcbf
-          vendor/bin/phpcs
+          vendor/bin/phpcs -q --report=checkstyle | cs2pr --graceful-warnings
+          vendor/bin/phpcbf -q --report=checkstyle | cs2pr --graceful-warnings
