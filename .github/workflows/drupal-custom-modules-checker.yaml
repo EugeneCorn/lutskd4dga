@@ -1,5 +1,5 @@
 name: Drupal custom modules checker
-on: [push,pull_request]
+  #on: [push,pull_request]
 jobs:
   drupal-checker:
     runs-on: ubuntu-latest
