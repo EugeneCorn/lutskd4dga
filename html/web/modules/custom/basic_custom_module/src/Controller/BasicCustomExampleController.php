@@ -18,7 +18,7 @@ class BasicCustomExampleController extends ControllerBase {
   public function helloWorld() {
 
     return [
-      '#markup' => $this->t('Hello World, I am just a basic custom example and this code is OK.'),
+      '#markup' => $this->t('Hello World, I am just a basic custom example.'),
     ];
   }
 
